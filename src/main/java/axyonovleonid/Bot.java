@@ -1,5 +1,6 @@
 package axyonovleonid;//package axyonovleonid;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.bots.TelegramWebhookBot;
@@ -27,6 +28,7 @@ public class Bot extends TelegramWebhookBot {
         ApiContextInitializer.init();
 //        DOMConfigurator.configure("log4j.xml");
         logger.debug("Log4j appender configuration is successful !!");
+        logger.setLevel(Level.ALL);
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 
         try {

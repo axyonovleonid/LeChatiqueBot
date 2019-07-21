@@ -1,5 +1,6 @@
 package axyonovleonid;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -7,6 +8,10 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class MessageDeletionTask implements Runnable {
     private static Logger logger = Logger.getLogger(MessageDeletionTask.class);
+
+    static {
+        logger.setLevel(Level.ALL);
+    }
     private Long time;
     private BotApiMethod method;
     private Bot bot;
