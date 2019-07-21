@@ -45,7 +45,7 @@ public class Bot extends TelegramLongPollingBot {
     @Override
 //    public BotApiMethod onWebhookUpdateReceived(Update update) {
     public void onUpdateReceived(Update update) {
-        logger.info(update);
+//        logger.info(update);
         if (update.hasMessage()) {
             Message message = update.getMessage();
             logger.info(message.toString());
@@ -127,7 +127,10 @@ public class Bot extends TelegramLongPollingBot {
                     logger.error(e);
                 }
             }
+        } else if (update.hasCallbackQuery()) {
+            logger.info("Callback query");
         }
+
         logger.info("update end");
 //        return null;
     }
