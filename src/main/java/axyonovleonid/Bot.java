@@ -17,6 +17,7 @@ import java.util.*;
 
 public class Bot extends TelegramLongPollingBot {
     private static Logger logger = Logger.getLogger(Bot.class.getName());
+
     static {
         List<Logger> loggers = Collections.<Logger>list(LogManager.getCurrentLoggers());
         loggers.add(LogManager.getRootLogger());
@@ -24,6 +25,7 @@ public class Bot extends TelegramLongPollingBot {
             logger.setLevel(Level.OFF);
         }
     }
+
     private Map<Long, ChatTimers> timers = new HashMap<>();
 
     public static void main(String... args) {
@@ -46,6 +48,16 @@ public class Bot extends TelegramLongPollingBot {
         logger.info(update);
         if (update.hasMessage()) {
             Message message = update.getMessage();
+            logger.info(message.toString());
+            if (message.hasVideoNote()) {
+                logger.info("video note");
+            }
+            if (message.hasDocument()) {
+                logger.info("document");
+            }
+            if (message.hasEntities()) {
+                logger.info("entities");
+            }
             long chatId = message.getChatId();
             Integer messageId = message.getMessageId();
             if (!timers.containsKey(chatId)) {
@@ -82,7 +94,7 @@ public class Bot extends TelegramLongPollingBot {
                 }
             } else {
                 try {
-                    logger.info(message.toString());
+
                     if (message.hasText() && message.getText().contains("would like to kick @smeshnotebesuka")) {
                         DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
                         execute(deleteMessage);
