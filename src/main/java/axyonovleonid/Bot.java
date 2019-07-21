@@ -63,7 +63,7 @@ public class Bot extends TelegramLongPollingBot {
             if (!timers.containsKey(chatId)) {
                 timers.put(chatId, new ChatTimers());
             }
-            if (message.isCommand()) {
+            if (false) {
                 String[] args = message.getText().split(" ");
                 if (Objects.equals(args[0], "set")) {
                     switch (args[1]) {
@@ -103,25 +103,25 @@ public class Bot extends TelegramLongPollingBot {
                         new Thread(new MessageDeletionTask(timers.get(chatId).getGifTimer(),
                                 new DeleteMessage(chatId, messageId), this)).start();
                         SendMessage reply = new SendMessage(chatId, "animation");
-                        execute(reply);
+//                        execute(reply);
                     }
                     if (message.hasPhoto()) {
                         new Thread(new MessageDeletionTask(timers.get(chatId).getImageTimer(),
                                 new DeleteMessage(chatId, messageId), this)).start();
                         SendMessage reply = new SendMessage(chatId, "photo");
-                        execute(reply);
+//                        execute(reply);
                     }
                     if (message.hasVideo()) {
                         new Thread(new MessageDeletionTask(timers.get(chatId).getVideoTimer(),
                                 new DeleteMessage(chatId, messageId), this)).start();
                         SendMessage reply = new SendMessage(chatId, "video");
-                        execute(reply);
+//                        execute(reply);
                     }
                     if (message.hasSticker()) {
                         new Thread(new MessageDeletionTask(timers.get(chatId).getStickerTimer(),
                                 new DeleteMessage(chatId, messageId), this)).start();
                         SendMessage reply = new SendMessage(chatId, "sticker");
-                        execute(reply);
+//                        execute(reply);
                     }
                 } catch (TelegramApiException e) {
                     logger.error(e);
