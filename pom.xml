@@ -18,7 +18,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>com.company.Bot</mainClass>
+                            <mainClass>axyonovleonid.Bot</mainClass>
                             <name>workerBot</name>
                         </program>
                     </programs>
