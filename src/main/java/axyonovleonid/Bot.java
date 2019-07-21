@@ -28,7 +28,7 @@ public class Bot extends TelegramLongPollingBot {
 
     public static void main(String... args) {
         ApiContextInitializer.init();
-//        logger.setLevel(Level.ALL);
+        logger.setLevel(Level.INFO);
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 
         try {

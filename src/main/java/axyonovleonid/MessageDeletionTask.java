@@ -24,7 +24,7 @@ public class MessageDeletionTask implements Runnable {
     @Override
     public void run() {
         try {
-            wait(time);
+            Thread.sleep(time);
             bot.execute(method);
         } catch (InterruptedException | TelegramApiException e) {
             logger.error(e);
