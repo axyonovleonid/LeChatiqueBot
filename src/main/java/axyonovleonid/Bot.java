@@ -1,6 +1,7 @@
 package axyonovleonid;//package axyonovleonid;
 
 import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -12,21 +13,22 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class Bot extends TelegramLongPollingBot {
     private static Logger logger = Logger.getLogger(Bot.class.getName());
-
     static {
-        logger.setLevel(Level.OFF);
+        List<Logger> loggers = Collections.<Logger>list(LogManager.getCurrentLoggers());
+        loggers.add(LogManager.getRootLogger());
+        for (Logger logger : loggers) {
+            logger.setLevel(Level.OFF);
+        }
     }
     private Map<Long, ChatTimers> timers = new HashMap<>();
 
     public static void main(String... args) {
         ApiContextInitializer.init();
-        logger.setLevel(Level.ALL);
+//        logger.setLevel(Level.ALL);
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 
         try {
