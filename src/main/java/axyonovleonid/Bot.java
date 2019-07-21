@@ -19,7 +19,7 @@ import java.util.Objects;
 public class Bot extends TelegramWebhookBot {
     private static Logger logger = Logger.getLogger(Bot.class.getName());
     private int defaultDeletionTime = 60;
-    private Map<Long, ChatTimers> timers = new HashMap();
+    private Map<Long, ChatTimers> timers = new HashMap<>();
 //    private static int imageTime = 60;
 //    private static int imageTime = 60;
 
@@ -31,7 +31,6 @@ public class Bot extends TelegramWebhookBot {
 
         try {
             telegramBotsApi.registerBot(new Bot());
-            System.out.println("Bot created!!!");
             logger.info("Bot created");
         } catch (TelegramApiRequestException e) {
             logger.error("Exception!", e);
@@ -155,6 +154,7 @@ public class Bot extends TelegramWebhookBot {
 
     @Override
     public String getBotPath() {
+        logger.info("path requested");
         return "https://le-chatique-bot.herokuapp.com/";
     }
 }
