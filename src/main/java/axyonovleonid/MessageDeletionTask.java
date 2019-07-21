@@ -10,7 +10,7 @@ public class MessageDeletionTask implements Runnable {
     private static Logger logger = Logger.getLogger(MessageDeletionTask.class);
 
     static {
-        logger.setLevel(Level.ALL);
+        logger.setLevel(Level.OFF);
     }
     private Long time;
     private BotApiMethod method;

@@ -19,6 +19,9 @@ import java.util.Objects;
 public class Bot extends TelegramLongPollingBot {
     private static Logger logger = Logger.getLogger(Bot.class.getName());
 
+    static {
+        logger.setLevel(Level.OFF);
+    }
     private Map<Long, ChatTimers> timers = new HashMap<>();
 
     public static void main(String... args) {
