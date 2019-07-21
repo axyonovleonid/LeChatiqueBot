@@ -89,25 +89,25 @@ public class Bot extends TelegramLongPollingBot {
                     }
                     if (message.hasAnimation()) {
                         new Thread(new MessageDeletionTask(timers.get(chatId).getGifTimer(),
-                                new DeleteMessage(chatId, messageId), this));
+                                new DeleteMessage(chatId, messageId), this)).start();
                         SendMessage reply = new SendMessage(chatId, "animation");
                         execute(reply);
                     }
                     if (message.hasPhoto()) {
                         new Thread(new MessageDeletionTask(timers.get(chatId).getImageTimer(),
-                                new DeleteMessage(chatId, messageId), this));
+                                new DeleteMessage(chatId, messageId), this)).start();
                         SendMessage reply = new SendMessage(chatId, "photo");
                         execute(reply);
                     }
                     if (message.hasVideo()) {
                         new Thread(new MessageDeletionTask(timers.get(chatId).getVideoTimer(),
-                                new DeleteMessage(chatId, messageId), this));
+                                new DeleteMessage(chatId, messageId), this)).start();
                         SendMessage reply = new SendMessage(chatId, "video");
                         execute(reply);
                     }
                     if (message.hasSticker()) {
                         new Thread(new MessageDeletionTask(timers.get(chatId).getStickerTimer(),
-                                new DeleteMessage(chatId, messageId), this));
+                                new DeleteMessage(chatId, messageId), this)).start();
                         SendMessage reply = new SendMessage(chatId, "sticker");
                         execute(reply);
                     }
