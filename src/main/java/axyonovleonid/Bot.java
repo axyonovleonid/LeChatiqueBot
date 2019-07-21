@@ -19,7 +19,7 @@ import java.util.Objects;
 
 public class Bot extends TelegramWebhookBot {
     private static Logger logger = Logger.getLogger(Bot.class.getName());
-    private int defaultDeletionTime = 60;
+    //    private int defaultDeletionTime = 60;
     private Map<Long, ChatTimers> timers = new HashMap<>();
 //    private static int imageTime = 60;
 //    private static int imageTime = 60;
@@ -27,7 +27,7 @@ public class Bot extends TelegramWebhookBot {
     public static void main(String... args) {
         ApiContextInitializer.init();
 //        DOMConfigurator.configure("log4j.xml");
-        logger.debug("Log4j appender configuration is successful !!");
+//        logger.debug("Log4j appender configuration is successful !!");
         logger.setLevel(Level.ALL);
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 
@@ -36,11 +36,13 @@ public class Bot extends TelegramWebhookBot {
             logger.info("Bot created");
         } catch (TelegramApiRequestException e) {
             logger.error("Exception!", e);
+            System.out.println(e);
         }
     }
 
     @Override
     public BotApiMethod onWebhookUpdateReceived(Update update) {
+        logger.info(update);
         if (update.hasMessage()) {
             Message message = update.getMessage();
             long chatId = message.getChatId();
@@ -112,19 +114,8 @@ public class Bot extends TelegramWebhookBot {
                     logger.error(e);
                 }
             }
-
-
-//            Message message = update.getMessage();
-//            logger.info(message.getText());
-//            SendMessage sendMessage = new SendMessage(message.getChatId(), message.getText());
-//            DeleteMessage deleteMessage = new DeleteMessage(message.getChatId(), message.getMessageId());
-//            try {
-//                execute(sendMessage);
-//                execute(deleteMessage);
-//            } catch (TelegramApiException e) {
-//                e.printStackTrace();
-//            }
         }
+        logger.info("update end");
         return null;
     }
 
