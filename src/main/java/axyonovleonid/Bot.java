@@ -71,24 +71,25 @@ public class Bot extends TelegramLongPollingCommandBot {
             }
 
             try {
-                if (!allowedChannels.get(chatId).contains(message.getForwardFromChat().getId())) {
-                    if (message.hasText() && message.getText().contains("would like to kick @smeshnotebesuka")) {
-                        DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
-                        execute(deleteMessage);
-                    } else if (message.hasAnimation()) {
-                        new Thread(new MessageDeletionTask(timers.get(chatId).getGifTimer(),
-                                new DeleteMessage(chatId, messageId), this)).start();
-                    } else if (message.hasPhoto()) {
-                        new Thread(new MessageDeletionTask(timers.get(chatId).getImageTimer(),
-                                new DeleteMessage(chatId, messageId), this)).start();
-                    } else if (message.hasVideo()) {
-                        new Thread(new MessageDeletionTask(timers.get(chatId).getVideoTimer(),
-                                new DeleteMessage(chatId, messageId), this)).start();
-                    } else if (message.hasSticker()) {
-                        new Thread(new MessageDeletionTask(timers.get(chatId).getStickerTimer(),
-                                new DeleteMessage(chatId, messageId), this)).start();
-                    }
+                if (message.getForwardFromChat() != null && allowedChannels.get(chatId).contains(message.getForwardFromChat().getId())) {
+
+                } else if (message.hasText() && message.getText().contains("would like to kick @smeshnotebesuka")) {
+                    DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
+                    execute(deleteMessage);
+                } else if (message.hasAnimation()) {
+                    new Thread(new MessageDeletionTask(timers.get(chatId).getGifTimer(),
+                            new DeleteMessage(chatId, messageId), this)).start();
+                } else if (message.hasPhoto()) {
+                    new Thread(new MessageDeletionTask(timers.get(chatId).getImageTimer(),
+                            new DeleteMessage(chatId, messageId), this)).start();
+                } else if (message.hasVideo()) {
+                    new Thread(new MessageDeletionTask(timers.get(chatId).getVideoTimer(),
+                            new DeleteMessage(chatId, messageId), this)).start();
+                } else if (message.hasSticker()) {
+                    new Thread(new MessageDeletionTask(timers.get(chatId).getStickerTimer(),
+                            new DeleteMessage(chatId, messageId), this)).start();
                 }
+
             } catch (TelegramApiException e) {
                 logger.error(e);
             }
