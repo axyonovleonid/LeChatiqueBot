@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/SetCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/SetCommand.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+            <state relative-caret-position="397">
+              <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#335#336#0" expanded="true" />
@@ -49,30 +47,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots-meta/4.3.1/telegrambots-meta-4.3.1.jar!/org/telegram/telegrambots/meta/api/objects/Message.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3194">
-              <caret line="304" column="16" selection-start-line="304" selection-start-column="16" selection-end-line="304" selection-end-column="16" />
-              <folding>
-                <element signature="e#10120#10121#0" expanded="true" />
-                <element signature="e#10163#10164#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+            <state relative-caret-position="24">
+              <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4609#4610#0" expanded="true" />
-                <element signature="e#4703#4704#0" expanded="true" />
-                <element signature="e#4833#4834#0" expanded="true" />
-                <element signature="e#4910#4911#0" expanded="true" />
-                <element signature="e#5005#5006#0" expanded="true" />
+                <element signature="e#4517#4518#0" expanded="true" />
+                <element signature="e#4611#4612#0" expanded="true" />
+                <element signature="e#4741#4742#0" expanded="true" />
+                <element signature="e#4818#4819#0" expanded="true" />
+                <element signature="e#4913#4914#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,9 +116,9 @@
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/ChatTimers.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/MessageDeletionTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AdminCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/SetCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java" />
       </list>
     </option>
@@ -400,7 +385,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563826973369" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563827311163" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -456,7 +441,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563723678882</updated>
-      <workItem from="1563723684108" duration="30849000" />
+      <workItem from="1563723684108" duration="31173000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1563728600805</created>
@@ -717,11 +702,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563826490415</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="True procfile">
+      <created>1563826985595</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1563826985595</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30849000" />
+    <option name="totallyTimeSpent" value="31173000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1129,32 +1121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots-meta/4.3.1/telegrambots-meta-4.3.1.jar!/org/telegram/telegrambots/meta/api/objects/Message.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3194">
-          <caret line="304" column="16" selection-start-line="304" selection-start-column="16" selection-end-line="304" selection-end-column="16" />
-          <folding>
-            <element signature="e#10120#10121#0" expanded="true" />
-            <element signature="e#10163#10164#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4609#4610#0" expanded="true" />
-            <element signature="e#4703#4704#0" expanded="true" />
-            <element signature="e#4833#4834#0" expanded="true" />
-            <element signature="e#4910#4911#0" expanded="true" />
-            <element signature="e#5005#5006#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AdminCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -1189,10 +1155,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots-meta/4.3.1/telegrambots-meta-4.3.1.jar!/org/telegram/telegrambots/meta/api/objects/Message.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1377">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="e#10120#10121#0" expanded="true" />
+            <element signature="e#10163#10164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4517#4518#0" expanded="true" />
+            <element signature="e#4611#4612#0" expanded="true" />
+            <element signature="e#4741#4742#0" expanded="true" />
+            <element signature="e#4818#4819#0" expanded="true" />
+            <element signature="e#4913#4914#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+        <state relative-caret-position="397">
+          <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#335#336#0" expanded="true" />

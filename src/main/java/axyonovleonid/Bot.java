@@ -59,7 +59,7 @@ public class Bot extends TelegramLongPollingCommandBot {
     public void processNonCommandUpdate(Update update) {
         if (update.hasMessage()) {
             Message message = update.getMessage();
-            logger.info(message.toString());
+            //logger.info(message.toString());
             long chatId = message.getChatId();
             Integer messageId = message.getMessageId();
             if (!timers.containsKey(chatId)) {

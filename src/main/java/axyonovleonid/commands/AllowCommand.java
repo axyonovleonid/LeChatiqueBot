@@ -48,7 +48,7 @@ public class AllowCommand implements AdminCommand {
                                 + channel.getTitle() + " is not in white list anymore");
                     } else {
                         allowedChannels.get(message.getChatId()).add(channel.getId());
-                        response.setText("Channel with id " + channel.getUserName() + " "
+                        response.setText("Channel with id @" + channel.getUserName() + " "
                                 + channel.getTitle() + " is in white list");
                     }
                     absSender.execute(response);
