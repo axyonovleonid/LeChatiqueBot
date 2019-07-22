@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e85600c8-a46a-45b9-894c-9405b921e194" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="91">
-              <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#473#474#0" expanded="true" />
@@ -32,10 +31,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
+            <state relative-caret-position="482">
               <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -49,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+            <state relative-caret-position="177">
+              <caret line="72" column="57" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4517#4518#0" expanded="true" />
@@ -116,10 +115,10 @@
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/ChatTimers.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/MessageDeletionTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AdminCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/SetCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java" />
       </list>
     </option>
   </component>
@@ -385,7 +384,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563827311163" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563827762330" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -441,7 +440,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563723678882</updated>
-      <workItem from="1563723684108" duration="31173000" />
+      <workItem from="1563723684108" duration="31647000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1563728600805</created>
@@ -709,11 +708,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563826985595</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="True procfile">
+      <created>1563827452765</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1563827452765</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31173000" />
+    <option name="totallyTimeSpent" value="31647000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1121,30 +1127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AdminCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/SetCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -1166,10 +1148,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AdminCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+        <state relative-caret-position="177">
+          <caret line="72" column="57" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4517#4518#0" expanded="true" />
@@ -1181,14 +1185,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+        <state relative-caret-position="91">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#335#336#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
           </folding>
         </state>
       </provider>

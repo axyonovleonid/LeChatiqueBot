@@ -9,7 +9,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class HelpCommand implements IBotCommand {
     @Override
     public String getCommandIdentifier() {
-        return "lhelp";
+        return "help";
     }
 
     @Override
