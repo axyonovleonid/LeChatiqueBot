@@ -1,5 +1,6 @@
 package axyonovleonid;//package axyonovleonid;
 
+import axyonovleonid.commands.AllowCommand;
 import axyonovleonid.commands.SetCommand;
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
@@ -14,10 +15,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Bot extends TelegramLongPollingCommandBot {
     private static Logger logger = Logger.getLogger(Bot.class.getName());
@@ -31,13 +29,14 @@ public class Bot extends TelegramLongPollingCommandBot {
     }
 
     private Map<Long, ChatTimers> timers = new HashMap<>();
-    private Map<Long, List<Long>> allowedChannels = new HashMap<>();
+    private Map<Long, Set<Long>> allowedChannels = new HashMap<>();
 
     public Bot(String botUsername) {
         super(botUsername);
         register(new HelpCommand());
         register(new axyonovleonid.commands.HelpCommand());
         register(new SetCommand());
+        register(new AllowCommand());
     }
 
     public static void main(String... args) {
@@ -59,74 +58,36 @@ public class Bot extends TelegramLongPollingCommandBot {
 //    public void onUpdateReceived(Update update) {
 //        logger.info(update);
     public void processNonCommandUpdate(Update update) {
-        if (update.hasChannelPost()) {
-            logger.info("CHANNEL POST = " + update.getChannelPost().getForwardFromChat().getTitle());
-        }
         if (update.hasMessage()) {
             Message message = update.getMessage();
             logger.info(message.toString());
-//            if (message.hasVideoNote()) {
-//                logger.info("video note");
-//            }
-//            if (message.hasDocument()) {
-//                logger.info("document");
-//            }
-//            if (message.hasEntities()) {
-//                logger.info("entities");
-//            }
-
             long chatId = message.getChatId();
             Integer messageId = message.getMessageId();
             if (!timers.containsKey(chatId)) {
                 timers.put(chatId, new ChatTimers());
             }
+            if (!allowedChannels.containsKey(chatId)) {
+                allowedChannels.put(chatId, new HashSet<>());
+            }
 
             try {
-//                if (message.hasText() && message.getText().startsWith("/"))
-//                {
-//                    String text = message.getText();
-//                    SendMessage response = new SendMessage();
-//                    if (text.startsWith("/le_help")) {
-//
-//                    } else if (update.getC) (text.startsWith("/set")) {
-//                        String[] args = text.split(" ");
-//                        switch (args[1]) {
-//                            case "gif":
-//                                timers.get(chatId).setGifTimer(Long.parseLong(args[2]));
-//                                break;
-//                            case "sticker":
-//                                timers.get(chatId).setStickerTimer(Long.parseLong(args[2]));
-//                                break;
-//                            case "image":
-//                                timers.get(chatId).setImageTimer(Long.parseLong(args[2]));
-//                                break;
-//                            case "video":
-//                                timers.get(chatId).setVideoTimer(Long.parseLong(args[2]));
-//                                break;
-//                            case "animatedSticker":
-//                                timers.get(chatId).setAnimatedStickerTimer(Long.parseLong(args[2]));
-//                                break;
-//                            default:
-//                                break;
-//                        }
-//
-//                    }
-//                } else
-                if (message.hasText() && message.getText().contains("would like to kick @smeshnotebesuka")) {
-                    DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
-                    execute(deleteMessage);
-                } else if (message.hasAnimation()) {
-                    new Thread(new MessageDeletionTask(timers.get(chatId).getGifTimer(),
-                            new DeleteMessage(chatId, messageId), this)).start();
-                } else if (message.hasPhoto()) {
-                    new Thread(new MessageDeletionTask(timers.get(chatId).getImageTimer(),
-                            new DeleteMessage(chatId, messageId), this)).start();
-                } else if (message.hasVideo()) {
-                    new Thread(new MessageDeletionTask(timers.get(chatId).getVideoTimer(),
-                            new DeleteMessage(chatId, messageId), this)).start();
-                } else if (message.hasSticker()) {
-                    new Thread(new MessageDeletionTask(timers.get(chatId).getStickerTimer(),
-                            new DeleteMessage(chatId, messageId), this)).start();
+                if (!allowedChannels.get(chatId).contains(message.getForwardFromChat().getId())) {
+                    if (message.hasText() && message.getText().contains("would like to kick @smeshnotebesuka")) {
+                        DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
+                        execute(deleteMessage);
+                    } else if (message.hasAnimation()) {
+                        new Thread(new MessageDeletionTask(timers.get(chatId).getGifTimer(),
+                                new DeleteMessage(chatId, messageId), this)).start();
+                    } else if (message.hasPhoto()) {
+                        new Thread(new MessageDeletionTask(timers.get(chatId).getImageTimer(),
+                                new DeleteMessage(chatId, messageId), this)).start();
+                    } else if (message.hasVideo()) {
+                        new Thread(new MessageDeletionTask(timers.get(chatId).getVideoTimer(),
+                                new DeleteMessage(chatId, messageId), this)).start();
+                    } else if (message.hasSticker()) {
+                        new Thread(new MessageDeletionTask(timers.get(chatId).getStickerTimer(),
+                                new DeleteMessage(chatId, messageId), this)).start();
+                    }
                 }
             } catch (TelegramApiException e) {
                 logger.error(e);
@@ -154,11 +115,11 @@ public class Bot extends TelegramLongPollingCommandBot {
         return "928489810:AAE-Ay0Hs5w4M1hRd1pgFDpU43xcfdWGuLQ";
     }
 
-    public Map<Long, List<Long>> getAllowedChannels() {
+    public Map<Long, Set<Long>> getAllowedChannels() {
         return allowedChannels;
     }
 
-    public void setAllowedChannels(Map<Long, List<Long>> allowedChannels) {
+    public void setAllowedChannels(Map<Long, Set<Long>> allowedChannels) {
         this.allowedChannels = allowedChannels;
     }
 
