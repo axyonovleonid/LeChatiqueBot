@@ -7,7 +7,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
-import org.telegram.telegrambots.extensions.bots.commandbot.commands.helpCommand.HelpCommand;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -33,7 +32,7 @@ public class Bot extends TelegramLongPollingCommandBot {
 
     public Bot(String botUsername) {
         super(botUsername);
-        register(new HelpCommand());
+//        register(new HelpCommand());
         register(new axyonovleonid.commands.HelpCommand());
         register(new SetCommand());
         register(new AllowCommand());

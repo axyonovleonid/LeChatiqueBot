@@ -14,7 +14,7 @@ import java.util.List;
 public class SetCommand implements AdminCommand {
     @Override
     public String getCommandIdentifier() {
-        return "le_set";
+        return "set";
     }
 
     @Override

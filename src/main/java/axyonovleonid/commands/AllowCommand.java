@@ -17,7 +17,7 @@ import java.util.Set;
 public class AllowCommand implements AdminCommand {
     @Override
     public String getCommandIdentifier() {
-        return "le_allow_channel";
+        return "allow_channel";
     }
 
     @Override
@@ -30,7 +30,7 @@ public class AllowCommand implements AdminCommand {
         GetChatAdministrators getChatAdministrators = new GetChatAdministrators().setChatId(message.getChatId());
         try {
             List<User> admins = AdminCommand.getAdmins(absSender, getChatAdministrators);
-            Chat channel = message.getForwardFromChat();
+            Chat channel = message.getReplyToMessage().getForwardFromChat();
             if (channel != null) {
                 Map<Long, Set<Long>> allowedChannels = ((Bot) absSender).getAllowedChannels();
                 System.out.println(channel.toString());
@@ -44,12 +44,12 @@ public class AllowCommand implements AdminCommand {
 
                     if (allowedChannels.get(message.getChatId()).contains(channel.getId())) {
                         allowedChannels.get(message.getChatId()).remove(channel.getId());
-                        response.setText("Channel with id @" + message.getForwardFromChat().getUserName() + " "
-                                + message.getForwardFromChat().getTitle() + " is not in white list anymore");
+                        response.setText("Channel with id @" + channel.getUserName() + " "
+                                + channel.getTitle() + " is not in white list anymore");
                     } else {
                         allowedChannels.get(message.getChatId()).add(channel.getId());
-                        response.setText("Channel with id " + message.getForwardFromChat().getUserName() + " "
-                                + message.getForwardFromChat().getTitle() + " is in white list");
+                        response.setText("Channel with id " + channel.getUserName() + " "
+                                + channel.getTitle() + " is in white list");
                     }
                     absSender.execute(response);
                 }
