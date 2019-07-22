@@ -3,6 +3,7 @@ package axyonovleonid.commands;
 import axyonovleonid.Bot;
 import org.telegram.telegrambots.meta.api.methods.groupadministration.GetChatAdministrators;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.bots.AbsSender;
@@ -29,26 +30,29 @@ public class AllowCommand implements AdminCommand {
         GetChatAdministrators getChatAdministrators = new GetChatAdministrators().setChatId(message.getChatId());
         try {
             List<User> admins = AdminCommand.getAdmins(absSender, getChatAdministrators);
-            Long channelId = message.getForwardFromChat().getId();
-            Map<Long, Set<Long>> allowedChannels = ((Bot) absSender).getAllowedChannels();
-            if (!allowedChannels.containsKey(message.getChatId())) {
-                allowedChannels.put(message.getChatId(), new HashSet<>());
-            }
-            if (admins.contains(message.getFrom())) {
-                SendMessage response = new SendMessage()
-                        .setReplyToMessageId(message.getMessageId())
-                        .setChatId(message.getChatId());
-
-                if (allowedChannels.get(message.getChatId()).contains(channelId)) {
-                    allowedChannels.get(message.getChatId()).remove(channelId);
-                    response.setText("Channel with id " + message.getForwardFromChat().getFirstName() + " "
-                            + message.getForwardFromChat().getLastName() + " is not in white list anymore");
-                } else {
-                    allowedChannels.get(message.getChatId()).add(channelId);
-                    response.setText("Channel with id " + message.getForwardFromChat().getFirstName() + " "
-                            + message.getForwardFromChat().getLastName() + " is in white list");
+            Chat channel = message.getForwardFromChat();
+            if (channel != null) {
+                Map<Long, Set<Long>> allowedChannels = ((Bot) absSender).getAllowedChannels();
+                System.out.println(channel.toString());
+                if (!allowedChannels.containsKey(message.getChatId())) {
+                    allowedChannels.put(message.getChatId(), new HashSet<>());
                 }
-                absSender.execute(response);
+                if (admins.contains(message.getFrom())) {
+                    SendMessage response = new SendMessage()
+                            .setReplyToMessageId(message.getMessageId())
+                            .setChatId(message.getChatId());
+
+                    if (allowedChannels.get(message.getChatId()).contains(channel.getId())) {
+                        allowedChannels.get(message.getChatId()).remove(channel.getId());
+                        response.setText("Channel with id @" + message.getForwardFromChat().getUserName() + " "
+                                + message.getForwardFromChat().getTitle() + " is not in white list anymore");
+                    } else {
+                        allowedChannels.get(message.getChatId()).add(channel.getId());
+                        response.setText("Channel with id " + message.getForwardFromChat().getUserName() + " "
+                                + message.getForwardFromChat().getTitle() + " is in white list");
+                    }
+                    absSender.execute(response);
+                }
             }
         } catch (TelegramApiException e) {
             e.printStackTrace();
