@@ -50,6 +50,11 @@ public class Bot extends TelegramLongPollingCommandBot {
             @Override
             public void processMessage(AbsSender absSender, Message message, String[] strings) {
                 SendMessage msg = new SendMessage(message.getChatId(), "AAAA");
+                try {
+                    execute(msg);
+                } catch (TelegramApiException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
