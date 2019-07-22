@@ -29,6 +29,10 @@ public class SetCommand implements AdminCommand {
             List<User> admins = AdminCommand.getAdmins(absSender, getChatAdministrators);
             if (admins.contains(message.getFrom())) {
                 ChatTimers chatTimers = ((Bot) absSender).getTimers().get(message.getChatId());
+                if (chatTimers == null) {
+                    chatTimers = new ChatTimers();
+                    ((Bot) absSender).getTimers().put(message.getChatId(), chatTimers);
+                }
                 SendMessage response = new SendMessage()
                         .setReplyToMessageId(message.getMessageId())
                         .setChatId(message.getChatId());
