@@ -1,17 +1,16 @@
 package axyonovleonid;//package axyonovleonid;
 
+import axyonovleonid.commands.SetCommand;
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
-import org.telegram.telegrambots.extensions.bots.commandbot.commands.IBotCommand;
+import org.telegram.telegrambots.extensions.bots.commandbot.commands.helpCommand.HelpCommand;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
@@ -36,27 +35,9 @@ public class Bot extends TelegramLongPollingCommandBot {
 
     public Bot(String botUsername) {
         super(botUsername);
-        register(new IBotCommand() {
-            @Override
-            public String getCommandIdentifier() {
-                return "le_help";
-            }
-
-            @Override
-            public String getDescription() {
-                return "Print help";
-            }
-
-            @Override
-            public void processMessage(AbsSender absSender, Message message, String[] strings) {
-                SendMessage msg = new SendMessage(message.getChatId(), "AAAA");
-                try {
-                    execute(msg);
-                } catch (TelegramApiException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        register(new HelpCommand());
+        register(new axyonovleonid.commands.HelpCommand());
+        register(new SetCommand());
     }
 
     public static void main(String... args) {
@@ -78,6 +59,9 @@ public class Bot extends TelegramLongPollingCommandBot {
 //    public void onUpdateReceived(Update update) {
 //        logger.info(update);
     public void processNonCommandUpdate(Update update) {
+        if (update.hasChannelPost()) {
+            logger.info("CHANNEL POST = " + update.getChannelPost().getForwardFromChat().getTitle());
+        }
         if (update.hasMessage()) {
             Message message = update.getMessage();
             logger.info(message.toString());
@@ -96,6 +80,7 @@ public class Bot extends TelegramLongPollingCommandBot {
             if (!timers.containsKey(chatId)) {
                 timers.put(chatId, new ChatTimers());
             }
+
             try {
 //                if (message.hasText() && message.getText().startsWith("/"))
 //                {
@@ -177,7 +162,15 @@ public class Bot extends TelegramLongPollingCommandBot {
         this.allowedChannels = allowedChannels;
     }
 
-//    @Override
+    public Map<Long, ChatTimers> getTimers() {
+        return timers;
+    }
+
+    public void setTimers(Map<Long, ChatTimers> timers) {
+        this.timers = timers;
+    }
+
+    //    @Override
 //    public String getBotPath() {
 //        logger.info("path requested");
 //        return "https://le-chatique-bot.herokuapp.com/";
