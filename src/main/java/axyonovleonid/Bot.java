@@ -29,7 +29,7 @@ public class Bot extends TelegramLongPollingCommandBot {
 
     private Map<Long, ChatTimers> timers = new HashMap<>();
     private Map<Long, Set<Long>> allowedChannels = new HashMap<>();
-
+    private Map<Long, MessageDeletionTask> deletionTaskMap = new HashMap();
     public Bot(String botUsername) {
         super(botUsername);
 //        register(new HelpCommand());
@@ -59,7 +59,6 @@ public class Bot extends TelegramLongPollingCommandBot {
     public void processNonCommandUpdate(Update update) {
         if (update.hasMessage()) {
             Message message = update.getMessage();
-            //logger.info(message.toString());
             long chatId = message.getChatId();
             Integer messageId = message.getMessageId();
             if (!timers.containsKey(chatId)) {
@@ -68,25 +67,37 @@ public class Bot extends TelegramLongPollingCommandBot {
             if (!allowedChannels.containsKey(chatId)) {
                 allowedChannels.put(chatId, new HashSet<>());
             }
-
+            if (!deletionTaskMap.containsKey(chatId)) {
+                deletionTaskMap.put(chatId, new MessageDeletionTask(this, chatId));
+                new Thread(deletionTaskMap.get(chatId)).start();
+            }
             try {
-                if (message.getForwardFromChat() != null && allowedChannels.get(chatId).contains(message.getForwardFromChat().getId())) {
-
-                } else if (message.hasText() && message.getText().contains("would like to kick @smeshnotebesuka")) {
-                    DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
-                    execute(deleteMessage);
-                } else if (message.hasAnimation()) {
-                    new Thread(new MessageDeletionTask(timers.get(chatId).getGifTimer(),
-                            new DeleteMessage(chatId, messageId), this)).start();
-                } else if (message.hasPhoto()) {
-                    new Thread(new MessageDeletionTask(timers.get(chatId).getImageTimer(),
-                            new DeleteMessage(chatId, messageId), this)).start();
-                } else if (message.hasVideo()) {
-                    new Thread(new MessageDeletionTask(timers.get(chatId).getVideoTimer(),
-                            new DeleteMessage(chatId, messageId), this)).start();
-                } else if (message.hasSticker()) {
-                    new Thread(new MessageDeletionTask(timers.get(chatId).getStickerTimer(),
-                            new DeleteMessage(chatId, messageId), this)).start();
+                if (message.getForwardFromChat() == null || !allowedChannels.get(chatId).contains(message.getForwardFromChat().getId())) {
+                    long time = System.currentTimeMillis();
+                    if (message.hasText() && message.getText().contains("would like to kick @smeshnotebesuka")) {
+                        DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
+                        execute(deleteMessage);
+                    } else if (message.hasAnimation()) {
+                        Long timer = timers.get(chatId).getGifTimer();
+                        if (timer > 0) {
+                            deletionTaskMap.get(chatId).deleteMessage(messageId, time + timer * 1000);
+                        }
+                    } else if (message.hasPhoto()) {
+                        Long timer = timers.get(chatId).getImageTimer();
+                        if (timer > 0) {
+                            deletionTaskMap.get(chatId).deleteMessage(messageId, time + timer * 1000);
+                        }
+                    } else if (message.hasVideo()) {
+                        Long timer = timers.get(chatId).getVideoTimer();
+                        if (timer > 0) {
+                            deletionTaskMap.get(chatId).deleteMessage(messageId, time + timer * 1000);
+                        }
+                    } else if (message.hasSticker()) {
+                        Long timer = timers.get(chatId).getStickerTimer();
+                        if (timer > 0) {
+                            deletionTaskMap.get(chatId).deleteMessage(messageId, time + timer * 1000);
+                        }
+                    }
                 }
 
             } catch (TelegramApiException e) {

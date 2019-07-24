@@ -2,7 +2,7 @@ package axyonovleonid;
 
 public class ChatTimers {
     private int chatId = 0;
-    private Long defaultValue = 300L;
+    private Long defaultValue = 30L;
     private Long imageTimer = defaultValue;
     private Long gifTimer = defaultValue;
     private Long videoTimer = defaultValue;
