@@ -30,6 +30,7 @@ public class Bot extends TelegramLongPollingCommandBot {
     private Map<Long, ChatTimers> timers = new HashMap<>();
     private Map<Long, Set<Long>> allowedChannels = new HashMap<>();
     private Map<Long, MessageDeletionTask> deletionTaskMap = new HashMap();
+
     public Bot(String botUsername) {
         super(botUsername);
 //        register(new HelpCommand());
@@ -75,8 +76,10 @@ public class Bot extends TelegramLongPollingCommandBot {
                 if (message.getForwardFromChat() == null || !allowedChannels.get(chatId).contains(message.getForwardFromChat().getId())) {
                     long time = System.currentTimeMillis();
                     if (message.hasText() && message.getText().contains("would like to kick @smeshnotebesuka")) {
-                        DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
-                        execute(deleteMessage);
+                        if (messageId % 10 == 0) {
+                            DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
+                            execute(deleteMessage);
+                        }
                     } else if (message.hasAnimation()) {
                         Long timer = timers.get(chatId).getGifTimer();
                         if (timer > 0) {
@@ -105,7 +108,7 @@ public class Bot extends TelegramLongPollingCommandBot {
             }
 
 
-            logger.info("update end");
+//            logger.info("update end");
 //        return null;
         }
     }

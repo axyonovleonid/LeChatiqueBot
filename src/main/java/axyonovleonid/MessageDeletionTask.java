@@ -22,7 +22,7 @@ public class MessageDeletionTask implements Runnable {
         this.chatId = chatId;
     }
 
-    public void deleteMessage(Integer messageId, Long deletionTime) {
+    void deleteMessage(Integer messageId, Long deletionTime) {
         times.add(new Pair<>(messageId, deletionTime));
     }
 
