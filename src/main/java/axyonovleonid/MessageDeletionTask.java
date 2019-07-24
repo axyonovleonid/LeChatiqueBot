@@ -38,9 +38,9 @@ public class MessageDeletionTask implements Runnable {
                     }
                 }
                 times.removeAll(toDelete);
-                Thread.sleep(1);
+//                Thread.sleep(1);
             }
-        } catch (InterruptedException | TelegramApiException e) {
+        } catch (TelegramApiException e) {
             logger.error(e);
         }
     }
