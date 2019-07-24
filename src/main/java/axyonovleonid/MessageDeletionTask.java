@@ -25,23 +25,23 @@ public class MessageDeletionTask implements Runnable {
         times.add(new Pair<>(messageId, deletionTime));
     }
 
+    private boolean timeExceeded(Pair<Integer, Long> time) {
+        long currentTime = System.currentTimeMillis();
+        if (currentTime >= time.second) {
+            try {
+                bot.execute(new DeleteMessage(chatId, time.first));
+            } catch (TelegramApiException e) {
+                logger.error(e);
+            }
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public void run() {
-        try {
-            while (true) {
-                long currentTime = System.currentTimeMillis();
-                List<Pair<Integer, Long>> toDelete = new ArrayList<>();
-                for (Pair<Integer, Long> time : times) {
-                    if (currentTime >= time.second) {
-                        bot.execute(new DeleteMessage(chatId, time.first));
-                        toDelete.add(time);
-                    }
-                }
-                times.removeAll(toDelete);
-//                Thread.sleep(1);
-            }
-        } catch (TelegramApiException e) {
-            logger.error(e);
+        while (true) {
+            times.removeIf(this::timeExceeded);
         }
     }
 }
