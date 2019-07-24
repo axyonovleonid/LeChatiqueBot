@@ -6,6 +6,7 @@ import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -14,7 +15,7 @@ public class MessageDeletionTask implements Runnable {
 
     private Bot bot;
     private Long chatId;
-    private List<Pair<Integer, Long>> times = new ArrayList<>();
+    private List<Pair<Integer, Long>> times = Collections.synchronizedList(new ArrayList<>());
 
     public MessageDeletionTask(Bot bot, Long chatId) {
         this.bot = bot;
@@ -42,6 +43,7 @@ public class MessageDeletionTask implements Runnable {
     public void run() {
         while (true) {
             times.removeIf(this::timeExceeded);
+//            Iterator it = times
         }
     }
 }
