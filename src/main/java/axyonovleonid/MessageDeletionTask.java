@@ -1,6 +1,6 @@
 package axyonovleonid;
 
-import jdk.internal.net.http.common.Pair;
+
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
