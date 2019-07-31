@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e85600c8-a46a-45b9-894c-9405b921e194" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/MessageDeletionTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/MessageDeletionTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/ChatTimers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/ChatTimers.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="937">
               <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -59,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/ChatTimers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            <state relative-caret-position="153">
+              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -160,10 +159,10 @@
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/SetCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/AllowCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/ChatTimers.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/Pair.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/MessageDeletionTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/axyonovleonid/ChatTimers.java" />
       </list>
     </option>
   </component>
@@ -429,7 +428,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563994286496" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564601499381" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -486,7 +485,7 @@
       <option name="presentableId" value="Default" />
       <updated>1563723678882</updated>
       <workItem from="1563723684108" duration="32267000" />
-      <workItem from="1563988963622" duration="5284000" />
+      <workItem from="1563988963622" duration="8936000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1563728600805</created>
@@ -810,11 +809,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563993043273</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="new deletion task">
+      <created>1563995113974</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1563995113974</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37551000" />
+    <option name="totallyTimeSpent" value="41203000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -826,7 +832,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Learn" order="4" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.24659607" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.24659607" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50378215" side_tool="true" weight="0.19148937" />
@@ -1215,13 +1221,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/ChatTimers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/commands/HelpCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
@@ -1272,7 +1271,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="937">
           <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1282,6 +1281,13 @@
             <element signature="e#5535#5536#0" expanded="true" />
             <element signature="e#5630#5631#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/axyonovleonid/ChatTimers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
         </state>
       </provider>
     </entry>
