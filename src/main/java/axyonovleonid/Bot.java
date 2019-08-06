@@ -67,7 +67,7 @@ public class Bot extends TelegramLongPollingCommandBot {
             }
             if (!allowedChannels.containsKey(chatId)) {
                 allowedChannels.put(chatId, new HashSet<>());
-                allowedChannels.get(chatId).add(1001139599644L);
+                allowedChannels.get(chatId).add(-1001139599644L);
             }
             if (!deletionTaskMap.containsKey(chatId)) {
                 deletionTaskMap.put(chatId, new MessageDeletionTask(this, chatId));
