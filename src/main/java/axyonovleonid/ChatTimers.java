@@ -3,11 +3,11 @@ package axyonovleonid;
 public class ChatTimers {
     private int chatId = 0;
     //    private Long defaultValue = 30L;
-    private Long imageTimer = 1000L;
-    private Long gifTimer = 200L;
-    private Long videoTimer = 1000L;
-    private Long stickerTimer = 300L;
-    private Long animatedStickerTimer = 300L;
+    private Long imageTimer = 3600L;
+    private Long gifTimer = 3600L;
+    private Long videoTimer = 3600L;
+    private Long stickerTimer = 3600L;
+    private Long animatedStickerTimer = 3600L;
 
     public int getChatId() {
         return chatId;
