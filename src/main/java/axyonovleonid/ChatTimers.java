@@ -4,7 +4,7 @@ public class ChatTimers {
     private int chatId = 0;
     //    private Long defaultValue = 30L;
     private Long imageTimer = 0L;
-    private Long gifTimer = 3600L;
+    private Long gifTimer = 1L;
     private Long videoTimer = 0L;
     private Long stickerTimer = 0L;
     private Long animatedStickerTimer = 0L;
