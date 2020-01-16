@@ -71,16 +71,20 @@ public class Bot extends TelegramLongPollingCommandBot {
                 }
             }
         }
-        if (update.hasInlineQuery()) {
-            logger.info(update.getInlineQuery());
-            logger.info(update);
-        }
-        if (update.hasPreCheckoutQuery()) {
-            logger.info(update.getPreCheckoutQuery());
-            logger.info(update);
-        }
-        if (update.hasPoll()) {
-            logger.info(update.getPoll());
+//        if (update.hasInlineQuery()) {
+//            logger.info(update.getInlineQuery());
+//            logger.info(update);
+//        }
+//        if (update.hasPreCheckoutQuery()) {
+//            logger.info(update.getPreCheckoutQuery());
+//            logger.info(update);
+//        }
+//        if (update.hasPoll()) {
+//            logger.info(update.getPoll());
+//            logger.info(update);
+//        }
+        if (update.hasChosenInlineQuery()) {
+            logger.info(update.getChosenInlineQuery());
             logger.info(update);
         }
         if (update.hasMessage()) {
