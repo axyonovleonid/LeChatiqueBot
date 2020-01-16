@@ -56,7 +56,7 @@ public class Bot extends TelegramLongPollingCommandBot {
 //    public void onUpdateReceived(Update update) {
 //        logger.info(update);
     public void processNonCommandUpdate(Update update) {
-
+        logger.info(update.toString());
         if (update.hasMessage()) {
             Message message = update.getMessage();
             long chatId = message.getChatId();
@@ -82,7 +82,7 @@ public class Bot extends TelegramLongPollingCommandBot {
             }
             if (message.getForwardFromChat() == null || !allowedChannels.get(chatId).contains(message.getForwardFromChat().getId())) {
                 long time = System.currentTimeMillis();
-                logger.info(message);
+//                logger.info(message);
                 if (message.hasAnimation()) {
                     Long timer = timers.get(chatId).getGifTimer();
                     if (timer > 0) {
