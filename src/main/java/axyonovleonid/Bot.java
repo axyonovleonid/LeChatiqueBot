@@ -8,10 +8,8 @@ import org.apache.log4j.Logger;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
-import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
 import java.util.*;
@@ -58,29 +56,19 @@ public class Bot extends TelegramLongPollingCommandBot {
 //    public void onUpdateReceived(Update update) {
 //        logger.info(update);
     public void processNonCommandUpdate(Update update) {
-        if (update.hasCallbackQuery()) {
-            if (update.getCallbackQuery().getMessage().getText().contains("kick")
-                    || update.getCallbackQuery().getMessage().getText().contains("кикнуть @smeshnotebesuka")) {
-                DeleteMessage deleteMessage = new DeleteMessage(update.getCallbackQuery().getMessage().getChatId(),
-                        update.getCallbackQuery().getMessage().getMessageId());
-                try {
-                    execute(deleteMessage);
-                } catch (TelegramApiException e) {
-                    logger.error(e);
-                }
-            }
-        }
-
 
         if (update.hasMessage()) {
             Message message = update.getMessage();
             long chatId = message.getChatId();
             Integer messageId = message.getMessageId();
-            if (message.hasText() && message.getText().contains("kick")) {
-                logger.info("found");
+
+            if (message.getFrom().getUserName().contains("banofbot")) {
                 logger.info(message);
-                logger.info(message.getText());
+                if (message.getText().contains("kick")) {
+                    logger.info("DELETE");
+                }
             }
+
             if (!timers.containsKey(chatId)) {
                 timers.put(chatId, new ChatTimers());
             }
