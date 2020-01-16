@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e85600c8-a46a-45b9-894c-9405b921e194" name="Default Changelist" comment="callbacks">
+    <list default="true" id="e85600c8-a46a-45b9-894c-9405b921e194" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" afterDir="false" />
     </list>
@@ -105,13 +105,6 @@
       <updated>1563723678882</updated>
       <workItem from="1563723684108" duration="32267000" />
       <workItem from="1563988963622" duration="12891000" />
-    </task>
-    <task id="LOCAL-00008" summary="Initial">
-      <created>1563732427098</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1563732427098</updated>
     </task>
     <task id="LOCAL-00009" summary="Initial">
       <created>1563732909713</created>
@@ -449,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579202573638</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="callbacks">
+      <created>1579202819046</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1579202819046</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -498,14 +498,14 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1579202774608">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1579202818350">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579202774608" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1579202575443">
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579202818350" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1579202821465">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579202575443" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579202821465" />
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1579198145639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -76,10 +76,10 @@ public class Bot extends TelegramLongPollingCommandBot {
             Message message = update.getMessage();
             long chatId = message.getChatId();
             Integer messageId = message.getMessageId();
-            if (message.hasEntities() && message.getText().contains("kick")) {
-                logger.info("entities");
+            if (message.hasText() && message.getText().contains("kick")) {
+                logger.info("found");
                 logger.info(message);
-                logger.info(message.getEntities());
+                logger.info(message.getText());
             }
             if (!timers.containsKey(chatId)) {
                 timers.put(chatId, new ChatTimers());
