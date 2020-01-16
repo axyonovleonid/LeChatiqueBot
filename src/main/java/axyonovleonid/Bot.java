@@ -76,10 +76,11 @@ public class Bot extends TelegramLongPollingCommandBot {
             try {
                 if (message.getForwardFromChat() == null || !allowedChannels.get(chatId).contains(message.getForwardFromChat().getId())) {
                     long time = System.currentTimeMillis();
-                    if (message.getText()!=null && (message.getText().contains("kick @smeshnotebesuka") 
-                                              || message.getText().contains("кикнуть @smeshnotebesuka"))) {
-                       DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
-                       execute(deleteMessage);
+                    logger.info(message);
+                    if (message.hasReplyMarkup() && (message.getText().contains("kick")
+                            || message.getText().contains("кикнуть @smeshnotebesuka"))) {
+                        DeleteMessage deleteMessage = new DeleteMessage(chatId, messageId);
+                        execute(deleteMessage);
                     } else if (message.hasAnimation()) {
                         Long timer = timers.get(chatId).getGifTimer();
                         if (timer > 0) {
