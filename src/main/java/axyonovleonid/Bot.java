@@ -76,6 +76,11 @@ public class Bot extends TelegramLongPollingCommandBot {
             Message message = update.getMessage();
             long chatId = message.getChatId();
             Integer messageId = message.getMessageId();
+            if (message.hasEntities()) {
+                logger.info("entities");
+                logger.info(message);
+                logger.info(message.getEntities());
+            }
             if (message.hasReplyMarkup()) {
                 logger.info("reply");
                 logger.info(message);
