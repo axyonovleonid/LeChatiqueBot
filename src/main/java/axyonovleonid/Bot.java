@@ -59,7 +59,6 @@ public class Bot extends TelegramLongPollingCommandBot {
 //        logger.info(update);
     public void processNonCommandUpdate(Update update) {
         if (update.hasCallbackQuery()) {
-            logger.info(update.getCallbackQuery());
             if (update.getCallbackQuery().getMessage().getText().contains("kick")
                     || update.getCallbackQuery().getMessage().getText().contains("кикнуть @smeshnotebesuka")) {
                 DeleteMessage deleteMessage = new DeleteMessage(update.getCallbackQuery().getMessage().getChatId(),
@@ -71,26 +70,22 @@ public class Bot extends TelegramLongPollingCommandBot {
                 }
             }
         }
-//        if (update.hasInlineQuery()) {
-//            logger.info(update.getInlineQuery());
-//            logger.info(update);
-//        }
-//        if (update.hasPreCheckoutQuery()) {
-//            logger.info(update.getPreCheckoutQuery());
-//            logger.info(update);
-//        }
-//        if (update.hasPoll()) {
-//            logger.info(update.getPoll());
-//            logger.info(update);
-//        }
-        if (update.hasChosenInlineQuery()) {
-            logger.info(update.getChosenInlineQuery());
-            logger.info(update);
-        }
+
+
         if (update.hasMessage()) {
             Message message = update.getMessage();
             long chatId = message.getChatId();
             Integer messageId = message.getMessageId();
+            if (message.hasReplyMarkup()) {
+                logger.info("reply");
+                logger.info(message);
+                logger.info(message.getReplyMarkup());
+            }
+            if (message.hasPoll()) {
+                logger.info("poll");
+                logger.info(message);
+                logger.info(message.getPoll());
+            }
             if (!timers.containsKey(chatId)) {
                 timers.put(chatId, new ChatTimers());
             }
