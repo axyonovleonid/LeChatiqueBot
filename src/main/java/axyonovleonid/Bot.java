@@ -58,8 +58,8 @@ public class Bot extends TelegramLongPollingCommandBot {
 //    public void onUpdateReceived(Update update) {
 //        logger.info(update);
     public void processNonCommandUpdate(Update update) {
-        logger.info(update);
         if (update.hasCallbackQuery()) {
+            logger.info(update.getCallbackQuery());
             if (update.getCallbackQuery().getMessage().getText().contains("kick")
                     || update.getCallbackQuery().getMessage().getText().contains("кикнуть @smeshnotebesuka")) {
                 DeleteMessage deleteMessage = new DeleteMessage(update.getCallbackQuery().getMessage().getChatId(),
@@ -67,9 +67,21 @@ public class Bot extends TelegramLongPollingCommandBot {
                 try {
                     execute(deleteMessage);
                 } catch (TelegramApiException e) {
-                    logger.equals(e);
+                    logger.error(e);
                 }
             }
+        }
+        if (update.hasInlineQuery()) {
+            logger.info(update.getInlineQuery());
+            logger.info(update);
+        }
+        if (update.hasPreCheckoutQuery()) {
+            logger.info(update.getPreCheckoutQuery());
+            logger.info(update);
+        }
+        if (update.hasPoll()) {
+            logger.info(update.getPoll());
+            logger.info(update);
         }
         if (update.hasMessage()) {
             Message message = update.getMessage();
