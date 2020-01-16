@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85600c8-a46a-45b9-894c-9405b921e194" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/LeChatiqueBot.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" afterDir="false" />
     </list>
@@ -106,13 +105,6 @@
       <updated>1563723678882</updated>
       <workItem from="1563723684108" duration="32267000" />
       <workItem from="1563988963622" duration="12891000" />
-    </task>
-    <task id="LOCAL-00002" summary="Initial">
-      <created>1563729947972</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1563729947972</updated>
     </task>
     <task id="LOCAL-00003" summary="Initial">
       <created>1563730027188</created>
@@ -450,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565126132392</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="ttt">
+      <created>1579199312940</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1579199312941</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -491,12 +490,21 @@
     <MESSAGE value="Initial" />
     <MESSAGE value="True procfile" />
     <MESSAGE value="new deletion task" />
-    <option name="LAST_COMMIT_MESSAGE" value="new deletion task" />
+    <MESSAGE value="ttt" />
+    <option name="LAST_COMMIT_MESSAGE" value="ttt" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1579199311880">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579199311880" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1579199315935">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579199315935" />
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1579198145639">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -505,6 +513,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="492" y="280" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1579198154662" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1579200274671">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1579200274671" />
   </component>
   <component name="masterDetails">
     <states>
