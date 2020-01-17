@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85600c8-a46a-45b9-894c-9405b921e194" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/axyonovleonid/Bot.java" afterDir="false" />
     </list>
     <list id="56833751-4267-4242-a159-3ac2b9704b45" name="Revert &quot;Update ChatTimers.java&quot;" comment="Revert &quot;Update ChatTimers.java&quot;&#10;&#10;This reverts commit 3807425f" />
@@ -27,6 +25,11 @@
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="901fa675f454595027875601113c9bf8a15ec808" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
@@ -80,6 +83,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Bot" />
+        <item itemvalue="Application.Bot" />
       </list>
     </recent_temporary>
   </component>
@@ -107,13 +111,6 @@
       <updated>1563723678882</updated>
       <workItem from="1563723684108" duration="32267000" />
       <workItem from="1563988963622" duration="12891000" />
-    </task>
-    <task id="LOCAL-00012" summary="Initial">
-      <created>1563735214893</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1563735214893</updated>
     </task>
     <task id="LOCAL-00013" summary="Initial">
       <created>1563735250914</created>
@@ -451,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579204069537</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="callbacks">
+      <created>1579277717912</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1579277717912</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -500,18 +504,18 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1579204550586">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1579277825830">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579204550586" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579277825830" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1579277706036">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1579277706036" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1579204071820">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1579277721121">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579204071819" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579277721121" />
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1579275253434">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -520,6 +524,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="492" y="280" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1579198154662" />
+    <state x="389" y="155" key="git4idea.merge.GitPullDialog" timestamp="1579277750890">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="155" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1579277750890" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1579200865929">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
