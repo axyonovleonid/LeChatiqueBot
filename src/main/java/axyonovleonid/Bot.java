@@ -30,7 +30,8 @@ public class Bot extends TelegramLongPollingCommandBot {
     private Map<Long, MessageDeletionTask> deletionTaskMap = new HashMap();
 
     public Bot(String botUsername) {
-        super(botUsername);
+//        super(botUsername);
+        super();
 //        register(new HelpCommand());
         register(new axyonovleonid.commands.HelpCommand());
         register(new SetCommand());
@@ -47,7 +48,6 @@ public class Bot extends TelegramLongPollingCommandBot {
             logger.info("Bot created");
         } catch (TelegramApiRequestException e) {
             logger.error("Exception!", e);
-            System.out.println(e);
         }
     }
 
@@ -56,18 +56,18 @@ public class Bot extends TelegramLongPollingCommandBot {
 //    public void onUpdateReceived(Update update) {
 //        logger.info(update);
     public void processNonCommandUpdate(Update update) {
-        logger.info(update.toString());
         if (update.hasMessage()) {
             Message message = update.getMessage();
             long chatId = message.getChatId();
             Integer messageId = message.getMessageId();
 
-            if (message.getFrom().getUserName().contains("banofbot")) {
-                logger.info(message);
-                if (message.getText().contains("kick")) {
-                    logger.info("DELETE");
-                }
-            }
+
+//            if (update.getMessage().isCommand() || message.getFrom().getUserName().contains("banofbot")) {
+//                logger.info(message);
+//                if (message.getText().contains("kick")) {
+//                    logger.info("DELETE");
+//                }
+//            }
 
             if (!timers.containsKey(chatId)) {
                 timers.put(chatId, new ChatTimers());
@@ -105,23 +105,8 @@ public class Bot extends TelegramLongPollingCommandBot {
                     }
                 }
             }
-
-
-//            logger.info("update end");
-//        return null;
         }
     }
-
-
-//    @Override
-//    public String getBotUsername() {
-//        return "le_chatique_bot";
-//    }
-
-//    @Override
-//    public void processNonCommandUpdate(Update update) {
-//
-//    }
 
     @Override
     public String getBotToken() {
