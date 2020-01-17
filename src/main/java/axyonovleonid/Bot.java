@@ -30,8 +30,8 @@ public class Bot extends TelegramLongPollingCommandBot {
     private Map<Long, MessageDeletionTask> deletionTaskMap = new HashMap();
 
     public Bot(String botUsername) {
-//        super(botUsername);
-        super();
+        super(botUsername);
+//        super();
 //        register(new HelpCommand());
         register(new axyonovleonid.commands.HelpCommand());
         register(new SetCommand());

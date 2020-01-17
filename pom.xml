@@ -53,12 +53,12 @@
         <dependency>
             <groupId>org.telegram</groupId>
             <artifactId>telegrambots</artifactId>
-            <version>LATEST</version>
+            <version>4.2</version>
         </dependency>
         <dependency>
             <groupId>org.telegram</groupId>
             <artifactId>telegrambotsextensions</artifactId>
-            <version>LATEST</version>
+            <version>4.2</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
